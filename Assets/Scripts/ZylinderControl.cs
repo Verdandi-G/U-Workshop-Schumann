@@ -7,6 +7,7 @@ public class ZylinderControl : MonoBehaviour
     private Animator anim;
     private Vector3 MoveVector = Vector3.zero;
     public float Speed = 10.0f;
+    public float Turn =200.0f;
     private int isWalking;
     private Vector3 TurnVector = Vector3.zero;
 
