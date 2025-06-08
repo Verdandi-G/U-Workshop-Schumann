@@ -25,7 +25,7 @@ public class ZylinderControl : MonoBehaviour
     {
         MoveVector.x = Input.GetAxis("Horizontal");
         MoveVector.z = Input.GetAxis("Vertical");
-        TurnVector.y = Input.GetAxis("Mouse X");
+        TurnVector.y = Input.GetAxis("Horizontal");
         MoveVector = transform.TransformDirection(MoveVector);
 
 
