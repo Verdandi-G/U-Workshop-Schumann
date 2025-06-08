@@ -8,6 +8,9 @@ public class ZylinderControl : MonoBehaviour
     private Vector3 MoveVector = Vector3.zero;
     public float Speed = 10.0f;
     private int isWalking;
+    private Vector3 TurnVector = Vector3.zero;
+
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -21,7 +24,12 @@ public class ZylinderControl : MonoBehaviour
     {
         MoveVector.x = Input.GetAxis("Horizontal");
         MoveVector.z = Input.GetAxis("Vertical");
+        TurnVector.y = Input.GetAxis("Mouse X");
+        MoveVector = transform.TransformDirection(MoveVector);
+
+
         Figur.Move(MoveVector * Time.deltaTime * Speed);
+        transform.Rotate(TurnVector * Time.deltaTime * Turn);
         if (MoveVector.x != 0 || MoveVector.z != 0)
         {
             anim.SetBool(isWalking, true);
